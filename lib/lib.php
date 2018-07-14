@@ -13,7 +13,7 @@ function collect_classes ($dir, $mask = ".php") {
             continue;
         }
         if (is_dir($dir . $file)) {
-            collect_classes ($dir . $file . '/');
+            collect_classes ($dir . $file . '/', $mask);
         } elseif (strpos($file, $mask) !== false) {
             require_once($dir . $file);
         }
