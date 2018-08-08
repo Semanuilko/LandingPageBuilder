@@ -1,10 +1,13 @@
-<?
+<?php
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
 
-function dump ($arg = false) {
-  echo "<pre>" . print_r($arg, 1) . "</pre>";
+function dump ($arg = false) {    
+    $output = print_r($arg, true);
+    echo PHP_SAPI === 'cli'
+        ? $output . "\n"
+        : "<pre>$output</pre>";  
 }
 
 function collect_classes ($dir, $mask = ".php") {

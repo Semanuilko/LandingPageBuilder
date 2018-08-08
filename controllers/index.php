@@ -8,8 +8,11 @@ class MainController {
 
     static function activate() {
         collect_classes (__DIR__ . "/../model/"); 
+        collect_classes (__DIR__ . "/../classes/", ".class.php"); 
         collect_classes (__DIR__ . "/","_controller.php"); 
         
+        AuthController::check_cookie();
+
         $action_path = self::get_action_path(self::get_controller_params());        
         include $action_path;
 

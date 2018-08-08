@@ -1,3 +1,3 @@
 <?php
-PageController::render("404");
+    PageController::render("404");
 ?>

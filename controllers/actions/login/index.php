@@ -1,0 +1,3 @@
+<?
+    PageController::render("login");
+?>

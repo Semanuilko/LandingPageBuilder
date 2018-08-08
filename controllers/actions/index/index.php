@@ -1,0 +1,3 @@
+<?php
+    PageController::render("index");
+?>

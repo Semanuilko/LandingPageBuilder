@@ -1,0 +1,5 @@
+<?
+
+AuthController::logout();
+
+?>
