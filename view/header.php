@@ -9,23 +9,8 @@
 
   <!-- Site Properties -->
   <title>Homepage - Semantic</title>
-  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
 
-  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
-
-  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
 
   <style type="text/css">
 
@@ -114,40 +99,18 @@
       }
     }
 
-
   </style>
+ 
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
 
-  <script src="assets/library/jquery.min.js"></script>
-  <script src="../dist/components/visibility.js"></script>
-  <script src="../dist/components/sidebar.js"></script>
-  <script src="../dist/components/transition.js"></script>
-  <script>
-  $(document)
-    .ready(function() {
 
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
 
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-  </script>
 </head>
 <body>
+
+
+
 
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
@@ -190,9 +153,7 @@
                 <a class="item">Work</a>
                 <a class="item">Company</a>
                 <a class="item">Careers</a>
-                <div class="right item">
-                    <a class="ui inverted button">Log in</a>
-                    <a class="ui inverted button">Sign Up</a>
+                <div class="right item">                   
                     <?
                         $user=AuthController::get_current_user();
                         if ( !$user ) {

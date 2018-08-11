@@ -16,12 +16,19 @@ class Form {
 
   function render() {    
     $fields = array_map(function ($field) {
-      $field_html = '<input ';
-      foreach ($field as $key => $value) {
-        $field_html .= "$key='$value' ";
+      switch ($field['type']) {
+        case "select":
+          
+          break;
+        default:
+          $field_html = '<div class="ui input"><input ';
+          foreach ($field as $key => $value) {
+            $field_html .= "$key='$value' ";
+          }
+          $field_html .= ' ></div>';      
+          return $field_html;
       }
-      $field_html .= ' >';      
-      return $field_html;
+     
     }, $this->fields);
     
     if ( isset($this->options['split_lines']) ) {
@@ -31,7 +38,7 @@ class Form {
     }      
         
     $buttons = array_map(function ($button) {
-      $button_html = '<button ';
+      $button_html = '<button class="ui button" ';
       foreach ($button as $key => $value) {
         $button_html .= "$key='$value' ";
       }

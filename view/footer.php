@@ -45,5 +45,36 @@
     </div>
   </div>
 </div>
+
+<?
+if (!empty($global_errors)){
+  foreach ($global_errors as $error) { ?>
+
+<!-- Error modal -->
+<div class="ui modal" id="modal_error">
+  <i class="close icon"></i>
+  <div class="header">
+    Ошибка!
+  </div>
+  <div class="image content">
+    <div class="description">
+      <?=$error['message']?>
+    </div>
+  </div>  
+</div>
+
+<?
+  }
+}
+?>
+
+
+ <script>   
+  $('.ui.modal')
+  .modal('show')
+  ;
+ </script>
+
+
 </body>
 </html>
